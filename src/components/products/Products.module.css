@@ -1,0 +1,55 @@
+.productsPage {
+    background-color: #f0f3f5;
+    color: #475569;
+}
+
+.formSelectUnderline {
+    border: none;
+    border-bottom: 1px solid #cbd5e1;
+    background: transparent;
+    padding: 2px 8px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    min-width: 160px;
+    transition: border-color 0.2s ease;
+}
+
+.formSelectUnderline:focus {
+    border-bottom-color: #82b300;
+}
+
+.productRow {
+    transition: all 0.2s ease;
+    min-height: 64px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.productRow:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-1px);
+}
+
+.deleteBtn {
+    color: #6c757d;
+    transition: color 0.2s ease;
+}
+
+.deleteBtn:hover {
+    color: #dc3545 !important;
+}
+
+.smallText {
+    font-size: 11px;
+}
+
+.objectFitContain {
+    object-fit: contain;
+}
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

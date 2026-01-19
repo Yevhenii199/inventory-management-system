@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # Сервіс для Next.js додатку
+  frontend:
+    build: .
+    container_name: inventory_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - CLOUDINARY_CLOUD_NAME=dpvrnlj6h
+      - CLOUDINARY_API_KEY=289293523722898
+      - CLOUDINARY_API_SECRET=W6fJ3TZGT4af0NE0eoW1wtLxkYo
+ 
+    depends_on:
+      - socket-server
+    restart: always
+
+  # Для ccloudinary
+
+
+  # Сервіс для WebSocket сервера
+  socket-server:
+    build: .
+    container_name: inventory_socket
+    ports:
+      - "3001:3001"
+    # Перевизначаємо команду запуску саме для цього контейнера
+    command: node server.js
+    restart: always
+
+networks:
+  default:
+    name: inventory_network

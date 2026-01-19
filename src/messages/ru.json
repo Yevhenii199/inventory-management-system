@@ -1,0 +1,62 @@
+{
+  "Navigation": {
+    "order": "Приход",
+    "groups": "Группы",
+    "products": "Продукты",
+    "users": "Пользователи",
+    "settings": "Настройки",
+    "comingSoon": "В разработке"
+  },
+  "Orders": {
+    "title": "Приходы / {count}",
+    "deleteConfirmation": "Вы уверены, что хотите удалить этот приход?",
+    "cancel": "ОТМЕНИТЬ",
+    "delete": "УДАЛИТЬ",
+    "addProduct": "Добавить продукт",
+    "statusFree": "Свободен",
+    "empty": "В этом приходе еще нет продуктов"
+  },
+  "OrderCard": {
+    "products": "Продукты"
+  },
+  "OrderDetails": {
+    "add_product": "Добавить продукт",
+    "status_free": "Свободен",
+    "no_products": "В этом приходе еще нет продуктов"
+  },
+  "Products": {
+    "title": "Продукты / {count}",
+    "typeLabel": "Тип:",
+    "specLabel": "Спецификация:",
+    "all": "Все",
+    "notFound": "Продукты не найдены",
+    "types": {
+      "Monitors": "Мониторы",
+      "Phones": "Телефоны"
+    }
+  },
+  "ProductRow": {
+    "status_free": "свободен",
+    "status_repair": "в ремонте",
+    "condition_new": "новый",
+    "condition_used": "Б / У",
+    "date_from": "с",
+    "date_to": "по"
+  },
+  "TopMenu": {
+    "today": "Сегодня",
+    "logoTitle": "Inventory"
+  },
+  "Common": {
+    "online": "В сети"
+  },
+  "Data": {
+    "product_main_title": "Gigabyte Technology X58-USB3 (Socket 1366)",
+    "category_monitors": "Мониторы",
+    "spec_standard": "Монитор Standard",
+    "spec_monitor_large": "Монитор 27 дюймов",
+    "spec_monitor_small": "Монитор 21 дюйм",
+    "order_group_long": "Длинное название группы №{id}",
+    "order_arrival_short": "Приход №{id}"
+  }
+}
