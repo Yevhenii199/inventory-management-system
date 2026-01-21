@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Inventory Management System
 
-## Getting Started
+Современная система управления инвентаризацией и заказами, построенная на стеке Next.js 15+, React 19 и Socket.io. Приложение позволяет эффективно отслеживать товары, управлять заказами в реальном времени и поддерживает многоязычность.
 
-First, run the development server:
+## 🚀 Основные возможности
+
+Управление заказами (Orders):
+
+Просмотр списка заказов с детальной статистикой (количество товаров, общая стоимость в USD и UAH).
+
+Интерактивный интерфейс: выбор заказа открывает панель с подробным списком входящих в него продуктов.
+
+Удаление заказов с подтверждением через модальное окно.
+
+Синхронизация данных с localStorage для сохранения состояния.
+
+Управление продуктами (Products):
+
+Полный список товаров с фильтрацией по типу и спецификации.
+
+Отображение связи продукта с конкретным заказом.
+
+Динамический поиск и фильтрация без перезагрузки страницы.
+
+Real-time функционал:
+
+Счетчик активных сессий (пользователей онлайн) через Socket.io.
+
+Живые часы в шапке приложения с обновлением каждую секунду.
+
+Интернационализация (i18n):
+
+Полная поддержка двух языков (Русский и English) через next-intl.
+
+Умная маршрутизация с учетом выбранной локали.
+
+Современный UI/UX:
+
+Адаптивная верстка на Bootstrap 5.
+
+Плавные анимации переходов с использованием Framer Motion.
+
+Кастомные хуки для работы с сокетами и временем.
+
+## 🛠 Технологический стек
+
+Frontend
+
+Framework: Next.js 16.1 (App Router)
+
+Library: React 19
+
+State Management: Redux Toolkit
+
+Styling: Bootstrap 5 + CSS Modules
+
+Animations: Framer Motion
+
+Icons: Lucide React
+
+Localization: next-intl
+
+Backend & Infrastructure
+
+Real-time: Socket.io (Client & Server)
+
+Server: Express (для сокет-сервера)
+
+Media Storage: Cloudinary
+
+Testing: Jest & React Testing Library
+
+## 📂 Структура проекта (основные части)
+
+Папка/Файл Описание
+
+app/[locale]/layout.tsx Корневой макет с поддержкой i18n и основной сеткой (Header + Sidebar).
+
+app/[locale]/orders/ Страница управления заказами.
+
+app/[locale]/products/ Страница управления продуктами с фильтрами.
+
+hooks/ Кастомные хуки (useClock, useSessionSocket).
+
+components/layout/ Компоненты навигации и верхней панели.
+
+utils/ Утилиты для форматирования дат и валют.
+
+server.js Node.js сервер для обработки WebSocket соединений.
+
+## ⚙️ Установка и запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/your-username/inventory-management-system.git
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+cd inventory-management-system
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
 
-## Learn More
+```bash
 
-To learn more about Next.js, take a look at the following resources:
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Настройка переменных окружения
 
-## Deploy on Vercel
+## Создайте файл .env.local в корне проекта:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+NEXT_PUBLIC_SOCKET_URL=http://localhost:3001
+
+```
+
+## Запуск приложения
+
+```bash
+
+npm run dev:all
+
+```
+
+## 🧪 Тестирование и проверка кода
+
+Запуск тестов: npm test
+
+Проверка типов (TypeScript): npm run type-check
+
+Линтинг: npm run lint
+
+Форматирование кода: npm run format (Prettier)
+
+## 📝 Скрипты
+
+npm run dev — запуск только Next.js в режиме разработки.
+
+npm run socket — запуск только сервера сокетов.
+
+npm run build — сборка проекта для продакшена.
+
+npm run start — запуск собранного приложения.
