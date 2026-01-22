@@ -74,6 +74,8 @@ Testing: Jest & React Testing Library
 
 Папка/Файл Описание
 
+db/inventory_schema.mwb Файл схеми БД, який можна відкрити в програмі MySQL Workbench.
+
 app/[locale]/layout.tsx Корневой макет с поддержкой i18n и основной сеткой (Header + Sidebar).
 
 app/[locale]/orders/ Страница управления заказами.
