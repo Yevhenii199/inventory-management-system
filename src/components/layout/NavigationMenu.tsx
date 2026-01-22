@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing'; 
 import UserAvatar from '../ ui/UserAvatar';
+import { motion } from 'framer-motion';
 
 export default function NavigationMenu() {
   const t = useTranslations('Navigation');
@@ -25,7 +26,6 @@ export default function NavigationMenu() {
       <nav className="w-100 mt-2">
         <ul className="nav flex-column text-center">
           {navItems.map((item) => {
-            // pathname из routing возвращает путь относительно текущего языка
             const isActive = pathname === item.path;
             
             return (
@@ -38,12 +38,19 @@ export default function NavigationMenu() {
                   style={{ fontSize: '14px', cursor: item.enabled ? 'pointer' : 'not-allowed' }}
                   title={!item.enabled ? t('comingSoon') : ""}
                 >
- 
                   {t(item.key)}
                   
                   {isActive && (
-                    <div className="position-absolute bottom-0 start-50 translate-middle-x" 
-                         style={{ height: '3px', width: '80px', backgroundColor: '#7cb342' }} />
+                    <motion.div 
+                      layoutId="navigation-underline"
+                      className="position-absolute bottom-0 start-50 translate-middle-x" 
+                      style={{ 
+                        height: '3px', 
+                        width: '80px', 
+                        backgroundColor: '#7cb342' 
+                      }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    />
                   )}
                 </Link>
               </li>

@@ -7,22 +7,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css'; 
 import Header from '@/components/layout/TopMenu';
 import NavigationMenu from '@/components/layout/NavigationMenu';
+import PageTransition from '@/components/layout/PageTransition';
 
 export default async function RootLayout({
   children,
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>; // В Next 15+ params это Promise
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 
-  // Проверка на корректность locale
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
-  // Получаем сообщения для провайдера (чтобы работало в клиентских компонентах)
   const messages = await getMessages();
 
   return (
@@ -42,7 +41,10 @@ export default async function RootLayout({
             </aside>
 
             <main className="flex-grow-1 overflow-auto p-5 position-relative">
-              {children}
+              {/* Анимация контента при переходе */}
+              <PageTransition>
+                {children}
+              </PageTransition>
             </main>
           </div>
         </NextIntlClientProvider>
